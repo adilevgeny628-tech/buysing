@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buysing 跨境一站式AGI智能体 - SAAS控制台</title>
+    <link rel="stylesheet" href="saas-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="data-flow-bg"></div>
+    
+    <nav class="saas-navbar">
+        <div class="saas-nav-container">
+            <div class="saas-nav-left">
+                <div class="saas-logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="url(#saasLogoGradient)" stroke-width="2"/>
+                        <path d="M10 16 L22 16 M16 10 L16 22" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="16" cy="16" r="4" fill="#9D4EDD"/>
+                        <defs>
+                            <linearGradient id="saasLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0F7AEA"/>
+                                <stop offset="100%" style="stop-color:#9D4EDD"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="saas-logo-text">Buysing</span>
+                </div>
+            </div>
+            
+            <div class="saas-nav-center">
+                <a href="saas-console.html" class="saas-nav-link active">工作台</a>
+                <a href="product-agent.html" class="saas-nav-link">产品管理</a>
+                <a href="#" class="saas-nav-link">订单管理</a>
+                <a href="inventory-agent.html" class="saas-nav-link">库存管理</a>
+                <a href="listing-optimization.html" class="saas-nav-link">Listing优化</a>
+                <a href="procurement-agent.html" class="saas-nav-link">采购计划</a>
+                <a href="#" class="saas-nav-link">数据分析</a>
+                <a href="#" class="saas-nav-link">系统设置</a>
+            </div>
+            
+            <div class="saas-nav-right">
+                <div class="saas-user-info">
+                    <div class="saas-user-avatar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="8" r="4" stroke="#0F7AEA" stroke-width="2"/>
+                            <path d="M4 20 C4 16, 8 14, 12 14 C16 14, 20 16, 20 20" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="saas-user-details">
+                        <span class="saas-user-name">张经理</span>
+                        <span class="saas-user-role">超级管理员</span>
+                    </div>
+                </div>
+                <button class="saas-logout-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10 L10 3 M10 3 L10 10 M10 3 L3 10" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10 10 L17 17 M17 17 L10 17 M17 17 L17 10" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="saas-layout">
+        <aside class="saas-sidebar">
+            <div class="saas-sidebar-header">
+                <h3>功能菜单</h3>
+            </div>
+            <div class="saas-sidebar-menu">
+                <a href="saas-console.html" class="saas-menu-item active">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <rect x="2" y="2" width="14" height="14" rx="2" stroke="#0F7AEA" stroke-width="2"/>
+                        <circle cx="5" cy="5" r="1" fill="#9D4EDD"/>
+                    </svg>
+                    <span>工作台</span>
+                </a>
+                <a href="product-agent.html" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="#0F7AEA" stroke-width="2"/>
+                        <circle cx="9" cy="9" r="3" fill="#9D4EDD"/>
+                    </svg>
+                    <span>产品管理Agent</span>
+                </a>
+                <a href="inventory-agent.html" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <rect x="2" y="4" width="14" height="10" rx="1" stroke="#0F7AEA" stroke-width="2"/>
+                        <circle cx="5" cy="9" r="1" fill="#9D4EDD"/>
+                        <circle cx="9" cy="9" r="1" fill="#9D4EDD"/>
+                        <circle cx="13" cy="9" r="1" fill="#9D4EDD"/>
+                    </svg>
+                    <span>库存管理Agent</span>
+                </a>
+                <a href="listing-optimization.html" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 12 L6 8 L10 12 L16 6" stroke="#0F7AEA" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Listing优化Agent</span>
+                </a>
+                <a href="procurement-agent.html" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 9 L16 9 M9 2 L9 16" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>采购计划Agent</span>
+                </a>
+                <a href="#" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 12 L6 8 L10 12 L16 6" stroke="#0F7AEA" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>数据分析</span>
+                </a>
+                <a href="#" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="#0F7AEA" stroke-width="2"/>
+                        <path d="M9 5 L9 9 L12 12" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>系统设置</span>
+                </a>
+            </div>
+        </aside>
+        
+        <main class="saas-main">
+            <div class="saas-header">
+                <div class="saas-header-title">
+                    <h1>产品功能流程</h1>
+                    <p>全链路智能运营闭环，从注册到优化的完整流程</p>
+                </div>
+                <div class="saas-header-actions">
+                    <button class="saas-btn saas-btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 2 L8 14 M2 8 L14 8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        新建任务
+                    </button>
+                    <button class="saas-btn saas-btn-secondary" id="refreshDashboardBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 8 A6 6 0 0 1 14 8" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M14 8 A6 6 0 0 1 2 8" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        刷新
+                    </button>
+                </div>
+            </div>
+            
+            <div class="saas-dashboard-summary">
+                <div class="dashboard-summary-header">
+                    <div class="summary-title">
+                        <h2>订单汇总</h2>
+                        <p>实时订单数据监控，每10秒自动刷新</p>
+                    </div>
+                    <div class="summary-controls">
+                        <div class="currency-switcher">
+                            <button class="currency-btn active" data-currency="usd">USD</button>
+                            <button class="currency-btn" data-currency="cny">CNY</button>
+                        </div>
+                        <div class="last-updated">
+                            <span id="lastUpdatedTime">更新于: --:--:--</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-summary-grid">
+                    <div class="summary-card summary-card-primary">
+                        <div class="summary-card-header">
+                            <div class="summary-card-title">今日订单</div>
+                            <div class="summary-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="#0F7AEA" stroke-width="2"/>
+                                    <path d="M7 12 L10 16 L17 8" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="summary-card-content">
+                            <div class="summary-value" id="todayOrders">0</div>
+                            <div class="summary-trend positive">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 12 L8 4 M4 8 L8 4 L12 8" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>+12.5%</span>
+                            </div>
+                        </div>
+                        <div class="summary-card-footer">
+                            <span class="summary-label">较昨日</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card summary-card-primary">
+                        <div class="summary-card-header">
+                            <div class="summary-card-title">今日销售额</div>
+                            <div class="summary-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="#0F7AEA" stroke-width="2"/>
+                                    <path d="M8 12 L10 14 L16 8" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="summary-card-content">
+                            <div class="summary-value" id="todaySales">$0.00</div>
+                            <div class="summary-trend positive">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 12 L8 4 M4 8 L8 4 L12 8" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>+8.3%</span>
+                            </div>
+                        </div>
+                        <div class="summary-card-footer">
+                            <span class="summary-label">较昨日</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card summary-card-secondary">
+                        <div class="summary-card-header">
+                            <div class="summary-card-title">本月订单</div>
+                            <div class="summary-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="#0F7AEA" stroke-width="2"/>
+                                    <path d="M7 8 L7 16 M12 8 L12 16 M17 8 L17 16" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="summary-card-content">
+                            <div class="summary-value" id="monthOrders">0</div>
+                            <div class="summary-trend positive">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 12 L8 4 M4 8 L8 4 L12 8" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>+15.2%</span>
+                            </div>
+                        </div>
+                        <div class="summary-card-footer">
+                            <span class="summary-label">较上月</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card summary-card-secondary">
+                        <div class="summary-card-header">
+                            <div class="summary-card-title">本月销售额</div>
+                            <div class="summary-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="#0F7AEA" stroke-width="2"/>
+                                    <path d="M12 6 L12 12 L16 16" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="summary-card-content">
+                            <div class="summary-value" id="monthSales">$0.00</div>
+                            <div class="summary-trend positive">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 12 L8 4 M4 8 L8 4 L12 8" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>+10.7%</span>
+                            </div>
+                        </div>
+                        <div class="summary-card-footer">
+                            <span class="summary-label">较上月</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dashboard-summary-details">
+                    <div class="summary-details-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">待处理订单</div>
+                            <div class="detail-value" id="pendingOrders">0</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">已发货订单</div>
+                            <div class="detail-value" id="shippedOrders">0</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">已完成订单</div>
+                            <div class="detail-value" id="completedOrders">0</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">退款订单</div>
+                            <div class="detail-value" id="refundedOrders">0</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">平均订单金额</div>
+                            <div class="detail-value" id="avgOrderValue">$0.00</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">转化率</div>
+                            <div class="detail-value" id="conversionRate">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="saas-product-skus">
+                <div class="product-skus-header">
+                    <div class="skus-title">
+                        <h2>在线销售产品SKU</h2>
+                        <p>实时监控所有在线产品的销售数据和库存状态</p>
+                    </div>
+                    <div class="skus-controls">
+                        <div class="skus-filter">
+                            <select class="skus-filter-select" id="skuFilter">
+                                <option value="all">全部产品</option>
+                                <option value="low-stock">库存不足</option>
+                                <option value="out-of-stock">缺货</option>
+                                <option value="normal">库存正常</option>
+                            </select>
+                        </div>
+                        <div class="skus-search">
+                            <input type="text" class="skus-search-input" id="skuSearch" placeholder="搜索SKU或产品名称...">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skus-stats">
+                    <div class="skus-stat-item">
+                        <div class="skus-stat-label">总产品数</div>
+                        <div class="skus-stat-value" id="totalProducts">20</div>
+                    </div>
+                    <div class="skus-stat-item">
+                        <div class="skus-stat-label">库存不足</div>
+                        <div class="skus-stat-value warning" id="lowStockCount">0</div>
+                    </div>
+                    <div class="skus-stat-item">
+                        <div class="skus-stat-label">缺货</div>
+                        <div class="skus-stat-value danger" id="outOfStockCount">0</div>
+                    </div>
+                    <div class="skus-stat-item">
+                        <div class="skus-stat-label">总营业额</div>
+                        <div class="skus-stat-value" id="totalRevenue">$0.00</div>
+                    </div>
+                    <div class="skus-stat-item">
+                        <div class="skus-stat-label">总订单数</div>
+                        <div class="skus-stat-value" id="totalOrders">0</div>
+                    </div>
+                </div>
+                
+                <div class="skus-table-container">
+                    <table class="skus-table">
+                        <thead>
+                            <tr>
+                                <th>SKU</th>
+                                <th>产品名称</th>
+                                <th>价格</th>
+                                <th>营业额</th>
+                                <th>订单数</th>
+                                <th>库存</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="skusTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="saas-content">
+                <div class="saas-process-flow">
+                    <div class="saas-process-container">
+                        <div class="saas-process-grid">
+                            <div class="saas-process-card saas-phase-0" data-phase="0">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段0</div>
+                                    <div class="saas-phase-name">起始</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#0F7AEA" stroke-width="2"/>
+                                        <circle cx="24" cy="18" r="6" stroke="#0F7AEA" stroke-width="2"/>
+                                        <path d="M12 38 C12 32, 18 30, 24 30 C30 30, 36 32, 36 38" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">卖家注册登录</div>
+                                <div class="saas-phase-desc">多租户权限验证，数据安全隔离</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                            
+                            <div class="saas-process-card saas-phase-1" data-phase="1">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段1</div>
+                                    <div class="saas-phase-name">产品开发</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#0F7AEA" stroke-width="2"/>
+                                        <circle cx="20" cy="20" r="8" stroke="#0F7AEA" stroke-width="2"/>
+                                        <path d="M26 26 L34 34" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                                        <rect x="16" y="32" width="16" height="8" rx="1" fill="#9D4EDD"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">选品Agent + 分析Agent</div>
+                                <div class="saas-phase-desc">抓取多平台热门产品，定向分析竞品卖点、痛点，生成差异化产品方案</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                            
+                            <div class="saas-process-card saas-phase-2" data-phase="2">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段2</div>
+                                    <div class="saas-phase-name">视觉创作</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#9D4EDD" stroke-width="2"/>
+                                        <path d="M16 32 L20 24 L24 28 L28 20 L32 28" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <circle cx="24" cy="16" r="6" stroke="#0F7AEA" stroke-width="2"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">图片创作Agent</div>
+                                <div class="saas-phase-desc">基于产品参数与卖点，生成符合平台算法的合规视觉素材，规避违规元素</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                            
+                            <div class="saas-process-card saas-phase-3" data-phase="3">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段3</div>
+                                    <div class="saas-phase-name">Listing生成</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#0F7AEA" stroke-width="2"/>
+                                        <rect x="14" y="14" width="20" height="20" rx="2" stroke="#0F7AEA" stroke-width="2"/>
+                                        <path d="M18 20 L30 20 M18 24 L26 24 M18 28 L28 28" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">Listing创作Agent</div>
+                                <div class="saas-phase-desc">适配多平台规则，生成多语言Listing，优化关键词布局提升曝光</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                            
+                            <div class="saas-process-card saas-phase-4" data-phase="4">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段4</div>
+                                    <div class="saas-phase-name">发布审核</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#9D4EDD" stroke-width="2"/>
+                                        <path d="M16 24 L20 20 L24 24 L32 16" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <rect x="12" y="28" width="24" height="6" rx="1" fill="#0F7AEA"/>
+                                        <rect x="14" y="30" width="8" height="2" fill="white"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">平台API对接</div>
+                                <div class="saas-phase-desc">生成平台适配表格，一键上传，实时跟踪平台审核状态，异常自动告警</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                            
+                            <div class="saas-process-card saas-phase-5" data-phase="5">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段5</div>
+                                    <div class="saas-phase-name">订单管理</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#0F7AEA" stroke-width="2"/>
+                                        <rect x="12" y="16" width="24" height="16" rx="2" stroke="#0F7AEA" stroke-width="2"/>
+                                        <circle cx="18" cy="24" r="2" fill="#9D4EDD"/>
+                                        <circle cx="24" cy="24" r="2" fill="#9D4EDD"/>
+                                        <circle cx="30" cy="24" r="2" fill="#9D4EDD"/>
+                                        <path d="M20 32 L24 28 L28 32" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">订单Agent</div>
+                                <div class="saas-phase-desc">聚合多平台订单，实时跟踪状态，异常订单（退款/取消）自动标记告警</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                            
+                            <div class="saas-process-card saas-phase-6" data-phase="6">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段6</div>
+                                    <div class="saas-phase-name">客服服务</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#9D4EDD" stroke-width="2"/>
+                                        <circle cx="16" cy="20" r="6" stroke="#0F7AEA" stroke-width="2"/>
+                                        <circle cx="32" cy="20" r="6" stroke="#0F7AEA" stroke-width="2"/>
+                                        <path d="M16 26 L16 34 M32 26 L32 34" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M20 34 L28 34" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">客服Agent</div>
+                                <div class="saas-phase-desc">多语言自动回复买家消息，处理纠纷工单，优化客服话术合规性</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                            
+                            <div class="saas-process-card saas-phase-7" data-phase="7">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段7</div>
+                                    <div class="saas-phase-name">采购库存</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#0F7AEA" stroke-width="2"/>
+                                        <rect x="12" y="16" width="24" height="16" rx="2" stroke="#0F7AEA" stroke-width="2"/>
+                                        <path d="M16 20 L32 20 M16 24 L28 24 M16 28 L24 28" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round"/>
+                                        <circle cx="36" cy="32" r="4" fill="#0F7AEA"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">采购Agent</div>
+                                <div class="saas-phase-desc">基于销量预测与库存数据，自动生成采购计划，对接供应商跟踪进度</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                            
+                            <div class="saas-process-card saas-phase-8" data-phase="8">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段8</div>
+                                    <div class="saas-phase-name">补货发货</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#9D4EDD" stroke-width="2"/>
+                                        <rect x="10" y="20" width="28" height="16" rx="2" stroke="#0F7AEA" stroke-width="2"/>
+                                        <circle cx="16" cy="28" r="4" fill="#9D4EDD"/>
+                                        <circle cx="32" cy="28" r="4" fill="#9D4EDD"/>
+                                        <path d="M24 12 L24 20 M20 16 L24 12 L28 16" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">补货发货Agent</div>
+                                <div class="saas-phase-desc">结合物流时效与平台规则，生成最优补货发货方案，对接物流商跟踪轨迹</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                            
+                            <div class="saas-process-card saas-phase-9" data-phase="9">
+                                <div class="saas-phase-header">
+                                    <div class="saas-phase-number">阶段9</div>
+                                    <div class="saas-phase-name">数据复盘</div>
+                                </div>
+                                <div class="saas-phase-icon">
+                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                        <circle cx="24" cy="24" r="20" stroke="#0F7AEA" stroke-width="2"/>
+                                        <circle cx="24" cy="20" r="8" stroke="#0F7AEA" stroke-width="2"/>
+                                        <path d="M20 24 L24 28 L28 24" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M14 32 L20 28 L24 32 L34 22" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="saas-phase-title">AGI综合分析</div>
+                                <div class="saas-phase-desc">全链路数据复盘，生成优化建议，反哺前端选品、Listing创作环节</div>
+                                <div class="saas-phase-indicator"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="saas-process-connections">
+                            <div class="saas-connection-line saas-line-0-1"></div>
+                            <div class="saas-connection-line saas-line-1-2"></div>
+                            <div class="saas-connection-line saas-line-2-3"></div>
+                            <div class="saas-connection-line saas-line-3-4"></div>
+                            <div class="saas-connection-line saas-line-4-5"></div>
+                            <div class="saas-connection-line saas-line-5-6"></div>
+                            <div class="saas-connection-line saas-line-6-7"></div>
+                            <div class="saas-connection-line saas-line-7-8"></div>
+                            <div class="saas-connection-line saas-line-8-9"></div>
+                            <div class="saas-connection-line saas-line-9-1 saas-loop-line"></div>
+                        </div>
+                        
+                        <div class="saas-loop-indicator">
+                            <div class="saas-loop-line"></div>
+                            <div class="saas-loop-text">循环迭代</div>
+                            <div class="saas-loop-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 4 L12 20 M8 16 L12 20 L16 16" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="saas-script.js"></script>
+</body>
+</html>

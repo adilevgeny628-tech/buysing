@@ -1,0 +1,22 @@
+{
+  "name": "buysing-saas",
+  "version": "1.0.0",
+  "description": "Buysing 跨境一站式AGI智能体 SAAS系统",
+  "main": "homepage/index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Build complete'",
+    "preview": "python -m http.server 8000"
+  },
+  "keywords": [
+    "saas",
+    "cross-border",
+    "agi",
+    "e-commerce",
+    "multi-agent"
+  ],
+  "author": "Buysing",
+  "license": "MIT",
+  "devDependencies": {}
+}

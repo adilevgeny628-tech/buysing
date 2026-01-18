@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buysing 跨境一站式AGI智能体 - 产品管理Agent</title>
+    <link rel="stylesheet" href="saas-styles.css">
+    <link rel="stylesheet" href="product-agent-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="data-flow-bg"></div>
+    
+    <nav class="saas-navbar">
+        <div class="saas-nav-container">
+            <div class="saas-nav-left">
+                <div class="saas-logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="14" stroke="url(#saasLogoGradient)" stroke-width="2"/>
+                        <path d="M10 16 L22 16 M16 10 L16 22" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="16" cy="16" r="4" fill="#9D4EDD"/>
+                        <defs>
+                            <linearGradient id="saasLogoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0F7AEA"/>
+                                <stop offset="100%" style="stop-color:#9D4EDD"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="saas-logo-text">Buysing</span>
+                </div>
+            </div>
+            
+            <div class="saas-nav-center">
+                <a href="saas-console.html" class="saas-nav-link">工作台</a>
+                <a href="product-agent.html" class="saas-nav-link active">产品管理</a>
+                <a href="inventory-agent.html" class="saas-nav-link">库存管理</a>
+                <a href="listing-optimization.html" class="saas-nav-link">Listing优化</a>
+                <a href="procurement-agent.html" class="saas-nav-link">采购计划</a>
+                <a href="#" class="saas-nav-link">数据分析</a>
+                <a href="#" class="saas-nav-link">系统设置</a>
+            </div>
+            
+            <div class="saas-nav-right">
+                <div class="saas-user-info">
+                    <div class="saas-user-avatar">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="8" r="4" stroke="#0F7AEA" stroke-width="2"/>
+                            <path d="M4 20 C4 16, 8 14, 12 14 C16 14, 20 16, 20 20" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="saas-user-details">
+                        <span class="saas-user-name">张经理</span>
+                        <span class="saas-user-role">超级管理员</span>
+                    </div>
+                </div>
+                <button class="saas-logout-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M3 10 L10 3 M10 3 L10 10 M10 3 L3 10" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10 10 L17 17 M17 17 L10 17 M17 17 L17 10" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="saas-layout">
+        <aside class="saas-sidebar">
+            <div class="saas-sidebar-header">
+                <h3>功能菜单</h3>
+            </div>
+            <div class="saas-sidebar-menu">
+                <a href="saas-console.html" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <rect x="2" y="2" width="14" height="14" rx="2" stroke="#0F7AEA" stroke-width="2"/>
+                        <circle cx="5" cy="5" r="1" fill="#9D4EDD"/>
+                    </svg>
+                    <span>工作台</span>
+                </a>
+                <a href="product-agent.html" class="saas-menu-item active">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="#0F7AEA" stroke-width="2"/>
+                        <circle cx="9" cy="9" r="3" fill="#9D4EDD"/>
+                    </svg>
+                    <span>产品管理Agent</span>
+                </a>
+                <a href="inventory-agent.html" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <rect x="2" y="4" width="14" height="10" rx="1" stroke="#0F7AEA" stroke-width="2"/>
+                        <circle cx="5" cy="9" r="1" fill="#9D4EDD"/>
+                        <circle cx="9" cy="9" r="1" fill="#9D4EDD"/>
+                        <circle cx="13" cy="9" r="1" fill="#9D4EDD"/>
+                    </svg>
+                    <span>库存管理Agent</span>
+                </a>
+                <a href="listing-optimization.html" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 12 L6 8 L10 12 L16 6" stroke="#0F7AEA" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Listing优化Agent</span>
+                </a>
+                <a href="procurement-agent.html" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 9 L16 9 M9 2 L9 16" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>采购计划Agent</span>
+                </a>
+                <a href="#" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path d="M2 12 L6 8 L10 12 L16 6" stroke="#0F7AEA" stroke-width="2" stroke-linejoin="round"/>
+                    </svg>
+                    <span>数据分析</span>
+                </a>
+                <a href="#" class="saas-menu-item">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <circle cx="9" cy="9" r="7" stroke="#0F7AEA" stroke-width="2"/>
+                        <path d="M9 5 L9 9 L12 12" stroke="#9D4EDD" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>系统设置</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="saas-main">
+            <div class="saas-header">
+                <div class="saas-header-title">
+                    <h1>产品管理Agent</h1>
+                    <p>多Agent协同完成平台刊登、库存管理、Listing优化与采购计划</p>
+                </div>
+                <div class="saas-header-actions">
+                    <button class="saas-btn saas-btn-primary" id="newTaskBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M8 2 L8 14 M2 8 L14 8" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        新建产品任务
+                    </button>
+                    <button class="saas-btn saas-btn-secondary" id="refreshBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 8 A6 6 0 1 1 14 8" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M14 8 L10 4 M14 8 L10 12" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        刷新
+                    </button>
+                </div>
+            </div>
+
+            <div class="workflow-horizontal-container">
+                <div class="workflow-header">
+                    <h2>平台刊登工作流程</h2>
+                    <p>多Agent协同完成从选品到平台发布的全流程</p>
+                </div>
+
+                <div class="workflow-steps-horizontal">
+                    <div class="workflow-step-horizontal" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">选品与分析</div>
+                            <div class="step-agent">
+                                <div class="agent-badge selection">选品Agent</div>
+                                <div class="agent-badge analysis">分析Agent</div>
+                            </div>
+                            <div class="step-desc">抓取热门产品，分析竞品，生成差异化方案</div>
+                            <div class="step-status completed">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <circle cx="8" cy="8" r="7" stroke="#10B981" stroke-width="2"/>
+                                    <path d="M5 8 L7 10 L11 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                已完成
+                            </div>
+                        </div>
+                        <div class="step-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 4 L12 20 M8 16 L12 20 L16 16" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step-horizontal" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">视觉内容创作</div>
+                            <div class="step-agent">
+                                <div class="agent-badge visual">图片创作Agent</div>
+                            </div>
+                            <div class="step-desc">生成符合平台算法的合规视觉素材</div>
+                            <div class="step-status completed">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <circle cx="8" cy="8" r="7" stroke="#10B981" stroke-width="2"/>
+                                    <path d="M5 8 L7 10 L11 6" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                已完成
+                            </div>
+                        </div>
+                        <div class="step-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 4 L12 20 M8 16 L12 20 L16 16" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step-horizontal" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Listing智能生成</div>
+                            <div class="step-agent">
+                                <div class="agent-badge listing">Listing创作Agent</div>
+                            </div>
+                            <div class="step-desc">适配多平台规则，生成多语言Listing</div>
+                            <div class="step-status in-progress">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <circle cx="8" cy="8" r="7" stroke="#0F7AEA" stroke-width="2"/>
+                                    <path d="M8 5 L8 11 M8 5 L5 8 M8 5 L11 8" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                进行中
+                            </div>
+                        </div>
+                        <div class="step-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 4 L12 20 M8 16 L12 20 L16 16" stroke="#0F7AEA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="workflow-step-horizontal" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">平台刊登上传</div>
+                            <div class="step-agent">
+                                <div class="agent-badge platform">平台对接Agent</div>
+                            </div>
+                            <div class="step-desc">一键上传到Amazon、TikTok等平台</div>
+                            <div class="step-status pending">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <circle cx="8" cy="8" r="7" stroke="#6B7280" stroke-width="2"/>
+                                    <circle cx="8" cy="8" r="3" fill="#6B7280"/>
+                                </svg>
+                                待处理
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="publication-management-section">
+                <div class="section-header">
+                    <h2>产品刊登管理</h2>
+                    <div class="section-actions">
+                        <input type="text" class="search-input" placeholder="搜索产品...">
+                        <select class="filter-select">
+                            <option value="all">全部状态</option>
+                            <option value="published">已刊登</option>
+                            <option value="processing">处理中</option>
+                            <option value="pending">待处理</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="all">全部平台</option>
+                            <option value="amazon">Amazon</option>
+                            <option value="tiktok">TikTok Shop</option>
+                            <option value="ebay">eBay</option>
+                        </select>
+                        <button class="saas-btn saas-btn-primary">批量刊登</button>
+                    </div>
+                </div>
+
+                <div class="publication-grid" id="publicationGrid">
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>上一页</button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">下一页</button>
+                </div>
+            </div>
+
+            <div class="product-list-section">
+                <div class="section-header">
+                    <h2>产品列表</h2>
+                    <div class="section-actions">
+                        <input type="text" class="search-input" placeholder="搜索产品...">
+                        <select class="filter-select">
+                            <option value="all">全部状态</option>
+                            <option value="published">已刊登</option>
+                            <option value="processing">处理中</option>
+                            <option value="pending">待处理</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="all">全部平台</option>
+                            <option value="amazon">Amazon</option>
+                            <option value="tiktok">TikTok Shop</option>
+                            <option value="ebay">eBay</option>
+                        </select>
+                        <button class="saas-btn saas-btn-secondary">批量操作</button>
+                    </div>
+                </div>
+
+                <div class="product-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox" class="checkbox-all">
+                                </th>
+                                <th>产品信息</th>
+                                <th>平台</th>
+                                <th>标题</th>
+                                <th>销量</th>
+                                <th>最后更新</th>
+                                <th>状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>上一页</button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">下一页</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="product-agent-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>财务计算器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>财务计算器</h1>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="compound">复利计算器</button>
+            <button class="tab-btn" data-tab="loan">贷款计算器</button>
+            <button class="tab-btn" data-tab="investment">投资回报计算器</button>
+            <button class="tab-btn" data-tab="savings">储蓄计算器</button>
+        </div>
+
+        <div class="tab-content">
+            <div id="compound" class="tab-panel active">
+                <h2>复利计算器</h2>
+                <div class="form-group">
+                    <label>本金金额 (¥)</label>
+                    <input type="number" id="compound-principal" value="10000" min="0" step="100">
+                </div>
+                <div class="form-group">
+                    <label>年利率 (%)</label>
+                    <input type="number" id="compound-rate" value="5" min="0" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>投资年限 (年)</label>
+                    <input type="number" id="compound-years" value="10" min="1" step="1">
+                </div>
+                <div class="form-group">
+                    <label>复利频率</label>
+                    <select id="compound-frequency">
+                        <option value="1">每年</option>
+                        <option value="2">每半年</option>
+                        <option value="4">每季度</option>
+                        <option value="12" selected>每月</option>
+                    </select>
+                </div>
+                <button class="calculate-btn" onclick="calculateCompound()">计算</button>
+                <div id="compound-result" class="result"></div>
+            </div>
+
+            <div id="loan" class="tab-panel">
+                <h2>贷款计算器</h2>
+                <div class="form-group">
+                    <label>贷款金额 (¥)</label>
+                    <input type="number" id="loan-amount" value="500000" min="0" step="1000">
+                </div>
+                <div class="form-group">
+                    <label>年利率 (%)</label>
+                    <input type="number" id="loan-rate" value="4.5" min="0" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>贷款期限 (年)</label>
+                    <input type="number" id="loan-years" value="30" min="1" step="1">
+                </div>
+                <div class="form-group">
+                    <label>还款方式</label>
+                    <select id="loan-type">
+                        <option value="equal-payment">等额本息</option>
+                        <option value="equal-principal">等额本金</option>
+                    </select>
+                </div>
+                <button class="calculate-btn" onclick="calculateLoan()">计算</button>
+                <div id="loan-result" class="result"></div>
+            </div>
+
+            <div id="investment" class="tab-panel">
+                <h2>投资回报计算器</h2>
+                <div class="form-group">
+                    <label>初始投资 (¥)</label>
+                    <input type="number" id="invest-initial" value="10000" min="0" step="100">
+                </div>
+                <div class="form-group">
+                    <label>每月定投 (¥)</label>
+                    <input type="number" id="invest-monthly" value="1000" min="0" step="100">
+                </div>
+                <div class="form-group">
+                    <label>预期年化收益率 (%)</label>
+                    <input type="number" id="invest-rate" value="8" min="0" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>投资年限 (年)</label>
+                    <input type="number" id="invest-years" value="10" min="1" step="1">
+                </div>
+                <button class="calculate-btn" onclick="calculateInvestment()">计算</button>
+                <div id="investment-result" class="result"></div>
+            </div>
+
+            <div id="savings" class="tab-panel">
+                <h2>储蓄计算器</h2>
+                <div class="form-group">
+                    <label>目标金额 (¥)</label>
+                    <input type="number" id="savings-goal" value="100000" min="0" step="1000">
+                </div>
+                <div class="form-group">
+                    <label>初始存款 (¥)</label>
+                    <input type="number" id="savings-initial" value="10000" min="0" step="100">
+                </div>
+                <div class="form-group">
+                    <label>年利率 (%)</label>
+                    <input type="number" id="savings-rate" value="3" min="0" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>每月存款 (¥)</label>
+                    <input type="number" id="savings-monthly" value="2000" min="0" step="100">
+                </div>
+                <button class="calculate-btn" onclick="calculateSavings()">计算</button>
+                <div id="savings-result" class="result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
